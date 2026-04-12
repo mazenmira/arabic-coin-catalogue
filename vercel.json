@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "arab-coin-catalogue",
+  "builds": [{ "src": "index.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "/index.html" }],
+  "headers": [{
+    "source": "/(.*)",
+    "headers": [
+      { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+      { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+    ]
+  }]
+}
